@@ -1,8 +1,7 @@
-require('rootpath')()
-
 var Joi = require('joi')
+var config = require('config')
 
-module.exports = function (config) {
+module.exports = function () {
   var Drone = require('models/drone')
   return [{
     path: config.apiPrefix + 'drones',
