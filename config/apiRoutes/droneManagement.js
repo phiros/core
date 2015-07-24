@@ -27,7 +27,7 @@ module.exports = function () {
     },
     handler: function (request, reply) {
       forwarder('register', request.payload, function (err, results) {
-        if (err) reply.code(503) // Service Unavailable
+        if (err) reply('').code(503) // Service Unavailable
         else reply(results)
       })
     }
@@ -38,7 +38,7 @@ module.exports = function () {
       var id = request.params.id
       var payload = request.payload
       forwarder('checkin', {id: id, data: payload}, function (err, results) {
-        if (err) reply.code(503) // Service Unavailable
+        if (err) reply('').code(503) // Service Unavailable
         else reply(results)
       })
     }
