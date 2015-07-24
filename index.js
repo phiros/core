@@ -5,7 +5,6 @@ require('rootpath')()
 var Hapi = require('hapi')
 var Primus = require('primus')
 var config = require('config')
-var Drone = require('models/drone')
 var logger = require('lib/log.js')(module)
 var apiRoutes = require('config/apiRoutes')
 var server = new Hapi.Server()
@@ -23,7 +22,7 @@ primus.on('connection', function (spark) {
   })
 })
 
-server.route(apiRoutes(config))
+server.route(apiRoutes())
 
 if (!module.parent) {
   server.start(function (err) {
