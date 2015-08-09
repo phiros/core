@@ -3,12 +3,12 @@
 
 var tape = require('tape')
 
-tape('githubInterface - list webhooks', function (t) {
+tape('microservices: githubInterface - list webhooks', function (t) {
   t.skip('Requires a mocked Github API!')
   t.end()
 })
 
-tape('githubInterface - create webhook', function (t) {
+tape('microservices: githubInterface - create webhook', function (t) {
   t.skip('Requires a mocked Github API!')
   t.end()
 })

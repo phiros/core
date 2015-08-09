@@ -8,4 +8,10 @@ else
 fi
 MICROSERVICES_PID=$!
 trap 'kill $MICROSERVICES_PID' EXIT
-./node_modules/tape/bin/tape test/*.js test/microservices/*.js ${LOG} | tap-spec
+sleep 2
+for file in `ls test/*.js`; do
+    node $file ${LOG} | tap-spec
+done
+for file in `ls test/microservices/*.js`; do
+    node $file ${LOG} | tap-spec
+done
